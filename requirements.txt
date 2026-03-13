@@ -1,6 +1,5 @@
 streamlit
-tensorflow
+tensorflow-cpu
 numpy
 pandas
-pickle
-json
+
