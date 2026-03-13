@@ -33,17 +33,13 @@ def load_dropdown_data():
 
 dropdown_data = load_dropdown_data()
 
-
-##########################################################################################
-##########################################################################################
-##########################################################################################
+# =============================================================================================
 
 st.title('Alex\'s Car Price Predictor')
 
 
-##########################################################################################
-####### User inputs ######################################################################
-##########################################################################################
+
+# User inputs =================================================================================
 
 col1, col2 = st.columns(2)
 
@@ -63,6 +59,12 @@ cat_enc = encoder.transform_df(pd.DataFrame({'make': [make], 'model': [model], '
     # Combine the encoded categorical features with the numerical features
 encoded_input = cat_enc | {'num_in': np.array([[mileage, year]], dtype='float32')}  
 
+
+
+# Prediction ================================================================================
+
+
+
 if col2.button("Predict"):
     logpred = carmodel.predict(encoded_input)
     truepred = np.exp(logpred)
@@ -71,9 +73,6 @@ if col2.button("Predict"):
 st.space("large")
 st.markdown("Note: this is a learning project, based on a historic dataset, and was written by a beginner. Don't take the predictions too seriously! For more info, see the [blog](https://aevetts.github.io/streamlit/)")
 
-##########################################################################################
-####### Prediction #######################################################################
-##########################################################################################
 
 
 
