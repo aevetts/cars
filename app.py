@@ -13,7 +13,7 @@ import numpy as np
 
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model('savedModels/noVariant.keras')
+    return tf.keras.models.load_model('savedModels/cazoo_31032026.keras')
 
 carmodel = load_model()
 
